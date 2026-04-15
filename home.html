@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detection of tooth position by yolov4 and various dental problems based on cnn with bitewing radiograph</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-600 to-green-500 text-white p-6 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-1.5xl font-bold">
+        Detection of tooth position by yolov4 and various dental problems based on cnn with bitewing radiograph
+      </h1>
+      <div>
+        <a href="{{ url_for('login') }}" 
+           class="bg-blue-900 hover:bg-blue-800 text-white px-4 py-2 rounded font-semibold mr-4">
+           Login 
+        </a>
+        <a href="{{ url_for('register') }}" 
+           class="bg-green-700 hover:bg-green-600 text-white px-4 py-2 rounded font-semibold">
+           Register
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Welcome Message Section -->
+  <main class="container mx-auto flex-grow px-4 py-24 max-w-4xl text-center">
+    <h1 class="text-4xl font-bold mb-6">Welcome to the Dental Disease Detection App</h1>
+    <p class="text-lg text-gray-700 mb-8">
+      This platform helps you detect dental diseases and analyze tooth positions accurately. Please login or register to continue.
+    </p>
+    <div class="space-x-4">
+      <a href="{{ url_for('login') }}">
+        <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded font-semibold">Login</button>
+      </a>
+      <a href="{{ url_for('register') }}">
+        <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded font-semibold">Register</button>
+      </a>
+    </div>
+  </main>
+  <!-- Interior Images Section -->
+  <section class="py-16 bg-gray-100">
+    <h2 class="text-3xl font-bold text-center mb-8">Dental Services </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <!-- Local Images -->
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="/static/images/interor1.jpeg" alt="Interior 1"
+             class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105">
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="/static/images/interor2.jpeg" alt="Interior 2"
+             class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105">
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="/static/images/interor3.jpeg" alt="Interior 3"
+             class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105">
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="/static/images/interor4.jpeg" alt="Interior 4"
+             class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105">
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="/static/images/interor5.jpeg" alt="Interior 5"
+             class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105">
+      </div>
+      <div class="overflow-hidden rounded-lg shadow-lg">
+        <img src="/static/images/interor6.jpeg" alt="Interior 6"
+             class="w-full h-64 object-cover transition-transform duration-300 hover:scale-105">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-sm py-8 mt-auto">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0">
+      <div>
+        <p class="font-semibold mb-2">Follow Us</p>
+        <div class="flex space-x-6">
+          <a href="https://facebook.com" class="hover:text-blue-400" target="_blank">Facebook</a>
+          <a href="https://twitter.com" class="hover:text-blue-400" target="_blank">Twitter</a>
+          <a href="https://instagram.com" class="hover:text-blue-400" target="_blank">Instagram</a>
+          <a href="https://linkedin.com" class="hover:text-blue-400" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="text-right space-y-2">
+        <div>
+          <p class="font-semibold">Contact Us</p>
+          <p>Email: <a href="mailto:info@toothdetect.com" class="text-blue-400 hover:text-blue-600">info@toothdetect.com</a></p>
+          <p>Phone: <a href="tel:+1234567890" class="text-blue-400 hover:text-blue-600">+1 (234) 567-890</a></p>
+        </div>
+        <div class="mt-2">
+          <p class="font-semibold">Location</p>
+          <p>123 Dental Health Ave, Smile City, World</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 text-center text-xs text-gray-400">
+      &copy; 2025 Tooth Detection & Disease Prediction. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
+
+</body>
+</html>

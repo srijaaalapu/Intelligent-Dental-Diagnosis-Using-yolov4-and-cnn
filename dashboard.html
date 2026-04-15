@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #0d3b66;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #0d3b66;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #0d3b66;
+      color: white;
+      font-size: 16px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #095288;
+    }
+
+    h2, h3 {
+      color: #0d3b66;
+      margin-bottom: 15px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    p {
+      max-width: 500px;
+      margin: 0 auto 25px auto;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #333;
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    form[action] {
+      max-width: 150px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello, {{ user }}!</h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    <label>Upload a dental image:</label>
+    <input type="file" name="image" accept="image/*" required>
+    <button type="submit">Detect Disease</button>
+  </form>
+
+  {% if disease %}
+    <h2>Detected Disease: {{ disease }}</h2>
+    <p>{{ metrics }}</p>
+    <img src="data:image/png;base64,{{ image_data }}" alt="Processed Image">
+
+    <h3>Training Graph</h3>
+    <img src="data:image/png;base64,{{ training_graph }}" alt="Training Graph">
+
+    <h3>Confusion Matrix</h3>
+    <img src="data:image/png;base64,{{ confusion_matrix_img }}" alt="Confusion Matrix">
+  {% endif %}
+
+  <form action="{{ url_for('logout') }}" method="get">
+    <button type="submit">Logout</button>
+  </form>
+</body>
+</html>
